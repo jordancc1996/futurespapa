@@ -1,0 +1,349 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+:root {
+  --radius: 0.625rem;
+  /* Future Papa Luxury Theme - Light Mode Base */
+  --background: #f8f8f8; /* White */
+  --foreground: #111111; /* Charcoal Black */
+  --card: #ffffff;
+  --card-foreground: #111111;
+  --popover: #ffffff;
+  --popover-foreground: #111111;
+  --primary: #d4af37; /* Gold */
+  --primary-foreground: #111111;
+  --secondary: #2c2c2e; /* Slate */
+  --secondary-foreground: #f8f8f8;
+  --muted: #e5e5e5;
+  --muted-foreground: #6b6b6b;
+  --accent: #d4af37; /* Gold */
+  --accent-foreground: #111111;
+  --destructive: #dc2626;
+  --border: #e5e5e5;
+  --input: #e5e5e5;
+  --ring: #d4af37;
+  --chart-1: #d4af37;
+  --chart-2: #2c2c2e;
+  --chart-3: #111111;
+  --chart-4: #f8f8f8;
+  --chart-5: #6b6b6b;
+  --sidebar: #f8f8f8;
+  --sidebar-foreground: #111111;
+  --sidebar-primary: #d4af37;
+  --sidebar-primary-foreground: #111111;
+  --sidebar-accent: #2c2c2e;
+  --sidebar-accent-foreground: #f8f8f8;
+  --sidebar-border: #e5e5e5;
+  --sidebar-ring: #d4af37;
+}
+
+.dark {
+  /* Future Papa Luxury Theme - Dark Mode */
+  --background: #111111; /* Charcoal Black */
+  --foreground: #f8f8f8; /* White */
+  --card: #2c2c2e; /* Slate */
+  --card-foreground: #f8f8f8;
+  --popover: #2c2c2e;
+  --popover-foreground: #f8f8f8;
+  --primary: #d4af37; /* Gold */
+  --primary-foreground: #111111;
+  --secondary: #2c2c2e; /* Slate */
+  --secondary-foreground: #f8f8f8;
+  --muted: #2c2c2e;
+  --muted-foreground: #a1a1a1;
+  --accent: #d4af37; /* Gold */
+  --accent-foreground: #111111;
+  --destructive: #ef4444;
+  --border: #2c2c2e;
+  --input: #2c2c2e;
+  --ring: #d4af37;
+  --chart-1: #d4af37;
+  --chart-2: #f8f8f8;
+  --chart-3: #2c2c2e;
+  --chart-4: #a1a1a1;
+  --chart-5: #6b6b6b;
+  --sidebar: #111111;
+  --sidebar-foreground: #f8f8f8;
+  --sidebar-primary: #d4af37;
+  --sidebar-primary-foreground: #111111;
+  --sidebar-accent: #2c2c2e;
+  --sidebar-accent-foreground: #f8f8f8;
+  --sidebar-border: #2c2c2e;
+  --sidebar-ring: #d4af37;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+
+/* Future Papa Custom Typography */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap');
+
+@layer base {
+  html {
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Playfair Display', serif;
+    font-weight: 600;
+  }
+  
+  .font-display {
+    font-family: 'Playfair Display', serif;
+  }
+  
+  .font-body {
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+}
+
+/* Future Papa Custom Styles */
+.hero-gradient {
+  background: linear-gradient(135deg, #111111 0%, #2c2c2e 100%);
+}
+
+.gold-gradient {
+  background: linear-gradient(135deg, #d4af37 0%, #f4d03f 100%);
+}
+
+.luxury-shadow {
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+}
+
+.glass-effect {
+  backdrop-filter: blur(16px);
+  background: rgba(44, 44, 46, 0.8);
+  border: 1px solid rgba(212, 175, 55, 0.2);
+}
+
+
+/* Future Papa Animations and Transitions */
+
+/* Smooth transitions for all interactive elements */
+* {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Hover effects for buttons */
+.btn-hover {
+  transform: translateY(0);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.btn-hover:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+}
+
+/* Card hover effects */
+.card-hover {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card-hover:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+}
+
+/* Fade in animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in {
+  animation: fadeIn 0.6s ease-out forwards;
+}
+
+/* Staggered fade in for multiple elements */
+.fade-in-delay-1 { animation-delay: 0.1s; }
+.fade-in-delay-2 { animation-delay: 0.2s; }
+.fade-in-delay-3 { animation-delay: 0.3s; }
+.fade-in-delay-4 { animation-delay: 0.4s; }
+
+/* Pulse animation for important elements */
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.8;
+  }
+}
+
+.pulse {
+  animation: pulse 2s infinite;
+}
+
+/* Smooth scroll behavior */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Loading animation for forms */
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.loading {
+  animation: spin 1s linear infinite;
+}
+
+/* Gradient animation for premium elements */
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.gradient-animate {
+  background: linear-gradient(-45deg, #D4AF37, #FFD700, #B8860B, #DAA520);
+  background-size: 400% 400%;
+  animation: gradientShift 3s ease infinite;
+}
+
+/* Scale animation for interactive elements */
+.scale-hover {
+  transition: transform 0.2s ease;
+}
+
+.scale-hover:hover {
+  transform: scale(1.05);
+}
+
+/* Slide in from left */
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.slide-in-left {
+  animation: slideInLeft 0.6s ease-out forwards;
+}
+
+/* Slide in from right */
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.slide-in-right {
+  animation: slideInRight 0.6s ease-out forwards;
+}
+
+/* Glow effect for premium elements */
+.glow {
+  box-shadow: 0 0 20px rgba(212, 175, 55, 0.3);
+  transition: box-shadow 0.3s ease;
+}
+
+.glow:hover {
+  box-shadow: 0 0 30px rgba(212, 175, 55, 0.5);
+}
+
+/* Smooth modal transitions */
+.modal-overlay {
+  backdrop-filter: blur(8px);
+  transition: opacity 0.3s ease;
+}
+
+.modal-content {
+  transform: scale(0.95);
+  transition: transform 0.3s ease;
+}
+
+.modal-content.open {
+  transform: scale(1);
+}
+
+/* Performance optimizations */
+.will-change-transform {
+  will-change: transform;
+}
+
+.will-change-opacity {
+  will-change: opacity;
+}
+
+/* Reduce motion for users who prefer it */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
